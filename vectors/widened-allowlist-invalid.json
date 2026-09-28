@@ -1,0 +1,17 @@
+{
+  "contract": "pay-policy/1",
+  "id": "policy/treasury/sub-agent-c",
+  "holder": "agent/sub-agent-c",
+  "parent": "policy/treasury",
+  "currency": "USD",
+  "limits": {
+    "perTransaction": { "minor": 25000, "currency": "USD" },
+    "perPeriod": { "period": "month", "cap": { "minor": 200000, "currency": "USD" } }
+  },
+  "allow": {
+    "counterparties": ["merchant/acme-cloud", "merchant/unknown-vendor"],
+    "rails": ["x402"],
+    "jurisdictions": ["US"]
+  },
+  "humanApprovalAbove": { "minor": 10000, "currency": "USD" }
+}

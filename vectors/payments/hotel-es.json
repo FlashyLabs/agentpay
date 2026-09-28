@@ -1,0 +1,7 @@
+{
+  "id": "pay_0008",
+  "amount": { "minor": 20000, "currency": "EUR" },
+  "counterparty": "merchant/example-hotels",
+  "rail": "card",
+  "jurisdiction": "ES"
+}

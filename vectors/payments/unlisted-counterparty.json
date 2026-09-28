@@ -1,0 +1,6 @@
+{
+  "id": "pay_0003",
+  "amount": { "minor": 2500, "currency": "USD" },
+  "counterparty": "merchant/unknown-vendor",
+  "rail": "x402"
+}

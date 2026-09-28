@@ -1,0 +1,6 @@
+{
+  "id": "pay_0005",
+  "amount": { "minor": 2500, "currency": "USD" },
+  "counterparty": "merchant/acme-cloud",
+  "rail": "bank"
+}

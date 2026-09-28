@@ -1,0 +1,13 @@
+{
+  "contract": "pay-policy/1",
+  "id": "policy/frozen",
+  "holder": "agent/retired-bot",
+  "currency": "USD",
+  "limits": {
+    "perTransaction": { "minor": 0, "currency": "USD" }
+  },
+  "allow": {
+    "counterparties": [],
+    "rails": []
+  }
+}

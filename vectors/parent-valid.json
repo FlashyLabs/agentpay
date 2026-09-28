@@ -1,0 +1,16 @@
+{
+  "contract": "pay-policy/1",
+  "id": "policy/treasury",
+  "holder": "agent/treasury",
+  "currency": "USD",
+  "limits": {
+    "perTransaction": { "minor": 100000, "currency": "USD" },
+    "perPeriod": { "period": "month", "cap": { "minor": 1000000, "currency": "USD" } }
+  },
+  "allow": {
+    "counterparties": ["merchant/acme-cloud", "merchant/example-data", "merchant/northwind-print"],
+    "rails": ["x402", "card", "stablecoin"],
+    "jurisdictions": ["US", "GB", "DE"]
+  },
+  "humanApprovalAbove": { "minor": 50000, "currency": "USD" }
+}

@@ -1,0 +1,16 @@
+{
+  "contract": "pay-policy/1",
+  "id": "policy/travel-desk",
+  "holder": "agent/travel-desk",
+  "currency": "EUR",
+  "limits": {
+    "perTransaction": { "minor": 30000, "currency": "EUR" },
+    "perPeriod": { "period": "week", "cap": { "minor": 100000, "currency": "EUR" } }
+  },
+  "allow": {
+    "counterparties": ["merchant/example-rail-tickets", "merchant/example-hotels"],
+    "rails": ["card"],
+    "jurisdictions": ["DE", "FR", "NL"]
+  },
+  "humanApprovalAbove": { "minor": 0, "currency": "EUR" }
+}

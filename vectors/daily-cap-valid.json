@@ -1,0 +1,16 @@
+{
+  "contract": "pay-policy/1",
+  "id": "policy/ops-bot",
+  "holder": "agent/ops-bot",
+  "currency": "USDC",
+  "limits": {
+    "perTransaction": { "minor": 10000, "currency": "USDC" },
+    "perPeriod": { "period": "day", "cap": { "minor": 50000, "currency": "USDC" } }
+  },
+  "allow": {
+    "counterparties": ["merchant/example-data"],
+    "rails": ["stablecoin", "x402"]
+  },
+  "humanApprovalAbove": { "minor": 5000, "currency": "USDC" },
+  "x-note": "extension keys are x- prefixed and carry no meaning to the evaluator"
+}

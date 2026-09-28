@@ -1,0 +1,20 @@
+{
+  "name": "@flashylabs/agentpay",
+  "version": "0.1.0",
+  "private": true,
+  "description": "pay-policy/1 — the vendor-neutral payment-policy abstraction for agents: spec, JSON Schema, vectors, a dependency-free checker and a pure allow/deny/escalate evaluator. Not a wallet.",
+  "type": "module",
+  "main": "vendor-pay-policy.mjs",
+  "exports": "./vendor-pay-policy.mjs",
+  "bin": {
+    "pay-policy": "vendor-pay-policy.mjs"
+  },
+  "scripts": {
+    "test": "node --test test/pay-policy.test.mjs",
+    "lint": "node scripts/lint.mjs",
+    "check": "node vendor-pay-policy.mjs check vectors/monthly-cap-valid.json"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

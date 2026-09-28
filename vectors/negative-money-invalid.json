@@ -1,0 +1,13 @@
+{
+  "contract": "pay-policy/1",
+  "id": "policy/research-ops",
+  "holder": "agent/research-ops",
+  "currency": "USD",
+  "limits": {
+    "perTransaction": { "minor": -1, "currency": "USD" }
+  },
+  "allow": {
+    "counterparties": ["merchant/acme-cloud"],
+    "rails": ["x402"]
+  }
+}
