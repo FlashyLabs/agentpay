@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://flashylabs.github.io/agentpay/sitemap.xml

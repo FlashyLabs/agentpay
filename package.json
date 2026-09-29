@@ -10,7 +10,7 @@
     "pay-policy": "vendor-pay-policy.mjs"
   },
   "scripts": {
-    "test": "node --test test/pay-policy.test.mjs",
+    "test": "node --test test/*.test.mjs",
     "lint": "node scripts/lint.mjs",
     "check": "node vendor-pay-policy.mjs check vectors/monthly-cap-valid.json"
   },

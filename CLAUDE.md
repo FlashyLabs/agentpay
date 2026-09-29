@@ -10,7 +10,7 @@ the JSON Schema, the vectors, a dependency-free checker and the evaluator.
 
 ```bash
 npm run lint   # node --check on every .mjs + house rules (no install)
-npm test       # node --test test/pay-policy.test.mjs
+npm test       # node --test test/*.test.mjs
 node vendor-pay-policy.mjs check <policy.json>
 node vendor-pay-policy.mjs attenuate <parent.json> <child.json>
 node vendor-pay-policy.mjs evaluate <policy.json> <payment.json> [ledger.json]

@@ -1,0 +1,50 @@
+{
+  "property": "agentpay",
+  "domain": null,
+  "title": "agentpay — pay-policy/1, the commerce layer of Web 4",
+  "pitch": "pay-policy/1 is a vendor-neutral payment-policy format and a pure allow / deny / escalate evaluator for agents that spend — it sits over any rail and answers one question: given a policy and a proposed payment, may it go, must it stop, or must a person decide.",
+  "layer": "commerce",
+  "contract": "pay-policy/1",
+  "accent": "--flashy-mint",
+  "refusals": [
+    {
+      "title": "Minor units only",
+      "body": "Every figure is `{ minor, currency }` — a whole number of minor units beside an explicit currency. A float anywhere in a policy, a payment or a ledger state is refused, and the CLI refuses `2500.0` in the file text before JSON.parse can quietly round it. A figure with no currency is not money; a string is not an integer."
+    },
+    {
+      "title": "Narrowing only",
+      "body": "A policy attenuated for a sub-agent may only narrow: caps ≤, allowlists ⊆, rails ⊆, jurisdictions ⊆, human gate ≤, same currency, same period. `attenuate(parent, child)` refuses any widening and names every widened dimension."
+    },
+    {
+      "title": "A human gate on money is mandatory",
+      "body": "Any policy whose per-transaction cap is above zero must carry `humanApprovalAbove`, strictly below that cap — a gate no permitted payment can reach is a missing gate. `0` escalates everything; a closed policy that can pay nobody may omit it."
+    },
+    {
+      "title": "A pure evaluator",
+      "body": "`evaluate(policy, payment, ledgerState)` reads no clock, opens no connection and mutates nothing. The period's spent-so-far is injected, never fetched — and when a period is capped and no ledger state is supplied, the answer is `deny`, because unknown is not zero."
+    },
+    {
+      "title": "allow / deny / escalate, with reasons",
+      "body": "`deny` and `escalate` always carry `{ code, message }` reasons, and every failing check is named rather than only the first. `allow` carries none and never widens beyond what the policy says: a payment above the human threshold is `escalate`, never `allow`."
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the pay-policy/1 checker refuse?",
+      "a": "A float anywhere in a document, a figure with no currency, a spendable policy with no human gate or a gate that is not strictly below the cap, a child policy that widens its parent in any dimension, and — at evaluation — a capped period with no ledger state supplied, which returns `deny` because unknown is not zero."
+    },
+    {
+      "q": "Where does agentpay sit in the stack?",
+      "a": "It is layer 8, Commerce — the \"How does value move?\" question. It is the rail-neutral policy layer over wallets and rails (flashyos-wdk is the reference rail); the envelope, the signer and the settlement stay there. It is not another wallet."
+    },
+    {
+      "q": "Is pay-policy/1 a standard yet?",
+      "a": "No. The status is draft: no adopter yet, nothing here has settled a real payment, and the format is not published as a standard. A spec becomes a standard only after the first independent adopter is named."
+    }
+  ],
+  "links": {
+    "hub": "https://github.com/FlashyLabs/web4",
+    "spec": "https://github.com/FlashyLabs/agentpay",
+    "repo": "https://github.com/FlashyLabs/agentpay"
+  }
+}

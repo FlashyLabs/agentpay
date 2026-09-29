@@ -1,0 +1,14 @@
+{
+  "mesh": "flashyos/1",
+  "org": {
+    "slug": "agentpay",
+    "name": "Agentpay",
+    "profile": "https://app.flashyos.com/org/agentpay"
+  },
+  "capabilities": [
+    "content-exchange"
+  ],
+  "wants": "https://api.flashyos.com/api/v1/network/roadmap",
+  "api": "https://api.flashyos.com",
+  "join": "https://flashyos.com/join"
+}
