@@ -57,8 +57,10 @@ matching and ALLOW/ESCALATE/DENY come from flashyos-wdk's `SpendEnvelope` and
 - The schema's key lists equal the checker's `SHAPE`; nested objects are
   closed; only `^x-` top-level extras; period enum equals `PERIODS`.
 - Every `node vendor-pay-policy.mjs …` line in the README runs and exits 0.
-- No `LICENSE` file; the README's last line is the licence line; both README
-  and SPEC say `Status: draft`.
+- Licensed under Apache-2.0 (holder Flashy Labs); the estate register in flashyos
+  `tools/estate-licences.mjs` is the authority. The `LICENSE` file is present and
+  carries that grant and holder (`Copyright 2026 Flashy Labs`); the README's last
+  line is the licence line; both README and SPEC still say `Status: draft`.
 - `package.json` has no dependency fields at all; CI installs nothing.
 - No brand name inside the format, the checker, or a vector.
 

@@ -12,7 +12,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const readme = readFileSync(join(ROOT, 'README.md'), 'utf8');
 
 const LICENCE_LINE =
-  'Licence: to be declared at launch. The estate licence register in flashyos governs; this repository is not yet open-sourced.';
+  'Licensed under Apache-2.0 (holder Flashy Labs); the estate register in flashyos `tools/estate-licences.mjs` is the authority.';
 
 test('the H1 is the first line and names the contract', () => {
   assert.ok(readme.startsWith('# agentpay — `pay-policy/1`'), 'the H1 must be the first line and name the contract');

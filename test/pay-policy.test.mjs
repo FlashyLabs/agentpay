@@ -564,10 +564,17 @@ test('repo: every README command in a code block runs and exits 0', () => {
   }
 });
 
-test('repo: no LICENSE file; the README ends on the licence line; the status is draft', () => {
-  assert.equal(existsSync(join(ROOT, 'LICENSE')), false);
+test('repo: the LICENSE is the estate-declared Apache-2.0 (holder Flashy Labs); the README ends on the licence line; the status is draft', () => {
+  // The estate register (flashyos tools/estate-licences.mjs) is the authority and
+  // names this repository Apache-2.0, holder Flashy Labs. The LICENSE must be
+  // present and carry exactly that grant and that holder.
+  assert.equal(existsSync(join(ROOT, 'LICENSE')), true, 'the estate register names this repo Apache-2.0; the LICENSE must be present');
+  const licence = readFileSync(join(ROOT, 'LICENSE'), 'utf8');
+  assert.match(licence, /Apache License/, 'the LICENSE must be the Apache License text');
+  assert.match(licence, /Version 2\.0/, 'the LICENSE must be Apache-2.0');
+  assert.equal((licence.match(/Copyright 2026 Flashy Labs/g) || []).length, 1, 'the LICENSE must name the holder — Copyright 2026 Flashy Labs — exactly once');
   const readme = readFileSync(join(ROOT, 'README.md'), 'utf8').trimEnd().split('\n');
-  assert.equal(readme.at(-1), 'Licence: to be declared at launch. The estate licence register in flashyos governs; this repository is not yet open-sourced.');
+  assert.equal(readme.at(-1), 'Licensed under Apache-2.0 (holder Flashy Labs); the estate register in flashyos `tools/estate-licences.mjs` is the authority.');
   assert.match(readFileSync(join(ROOT, 'README.md'), 'utf8'), /Status: draft/);
   assert.match(readFileSync(join(ROOT, 'SPEC.md'), 'utf8'), /Status: draft/);
 });

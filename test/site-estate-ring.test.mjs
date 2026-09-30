@@ -35,6 +35,10 @@ test('the ring has properties, each with a unique domain', () => {
   }
 });
 
+test('the vendored ring is dated, so a stale copy is visible', () => {
+  assert.match(RING['x-generated'] ?? '', /^\d{4}-\d{2}-\d{2}$/, 'x-generated must carry the date the copy was vendored');
+});
+
 test('estate-ring.json matches flashyos estateRing.ts (or UNKNOWN)', () => {
   if (!existsSync(SRC)) {
     console.log('UNKNOWN: flashyos checkout is absent; cannot verify the estate ring is current');

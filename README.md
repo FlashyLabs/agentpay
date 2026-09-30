@@ -130,4 +130,4 @@ node scripts/build-site.mjs   # regenerate site/ from site.config.json + the ven
 
 Status: draft; the institutional front door was generated 2026-09-29. No adopter yet; nothing here has settled a real payment, and the format is not published as a standard.
 
-Licence: to be declared at launch. The estate licence register in flashyos governs; this repository is not yet open-sourced.
+Licensed under Apache-2.0 (holder Flashy Labs); the estate register in flashyos `tools/estate-licences.mjs` is the authority.
