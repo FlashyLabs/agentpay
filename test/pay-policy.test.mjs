@@ -593,7 +593,7 @@ test('repo: package.json is private, ESM, Node 22, dependency-free, and its scri
   assert.doesNotMatch(ci, /npm (ci|install)/);
   assert.match(ci, /actions\/checkout@v4/);
   assert.match(ci, /actions\/setup-node@v4/);
-  assert.match(ci, /node-version: ['"]?22/);
+  assert.match(ci, /node:\s*\[[^\]]*'22'/);
 });
 
 test('repo: every .mjs passes node --check', () => {
