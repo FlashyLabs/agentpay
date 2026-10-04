@@ -35,7 +35,7 @@ function run(args) {
 // ─── The manifest covers the directory ───────────────────────────────────────
 
 test('every vector on disk is named in vectors/index.json', () => {
-  const onDisk = walk(VECTORS).map((p) => relative(VECTORS, p)).filter((p) => p !== 'index.json').sort();
+  const onDisk = walk(VECTORS).map((p) => relative(VECTORS, p).replace(/\\/g, '/')).filter((p) => p !== 'index.json').sort();
   const named = new Set([
     ...index.policies.map((p) => p.file),
     ...index.attenuations.flatMap((a) => [a.parent, a.child]),
